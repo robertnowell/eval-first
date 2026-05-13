@@ -1,0 +1,12 @@
+{
+  "name": "eval-first",
+  "version": "1.0.0",
+  "description": "Bakes eval-first thinking into model-output work as a habit, not a gate. Forces every plan to name what success looks like, where things can go wrong, and propose simple evals validating key assumptions.",
+  "author": {
+    "name": "Robert Nowell"
+  },
+  "homepage": "https://github.com/robertnowell/eval-first",
+  "repository": "https://github.com/robertnowell/eval-first",
+  "license": "MIT",
+  "keywords": ["evals", "agents", "skills", "claude-code", "verification", "assumption-testing"]
+}

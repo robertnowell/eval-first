@@ -1,0 +1,17 @@
+{
+  "name": "eval-first-marketplace",
+  "owner": {
+    "name": "Robert Nowell"
+  },
+  "metadata": {
+    "description": "Eval-first thinking for Claude Code — verification as habit, not gate"
+  },
+  "plugins": [
+    {
+      "name": "eval-first",
+      "description": "Bakes eval-first thinking into model-output work — name success, name failure modes, propose simple evals validating key assumptions, all as part of the plan.",
+      "category": "productivity",
+      "source": "./"
+    }
+  ]
+}
