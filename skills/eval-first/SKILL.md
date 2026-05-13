@@ -1,7 +1,6 @@
 ---
 name: eval-first
-description: For any work involving prompts, agents, skills, judges, or model outputs, name what success looks like, where things can go wrong, and propose simple evals that validate the key assumptions. Run them as part of doing the work; show verdict first, evidence second. Never ask the user to label. Never refuse work. Skip the protocol for mechanical changes (typos, formatting, renames with no semantic shift).
-when_to_use: Invoke the full skill for non-trivial changes — multi-step agents, judge prompts, refusal/safety changes, production-bound skills, or anywhere the reference patterns (anchor generation, cheap-check snippets, comparison templates) actually pay off. For lighter changes, the description's guidance is enough — apply it inline without invoking.
+description: "For any work involving prompts, agents, skills, judges, or model outputs: name what success looks like, where things can go wrong, and propose simple evals that validate the key assumptions. Run them as part of doing the work; show verdict first, evidence second. Never ask the user to label. Never refuse work. Skip for mechanical changes (typos, formatting, renames). Invoke the full skill for non-trivial changes (multi-step agents, judge prompts, refusal/safety changes, production-bound skills) where reference patterns pay off."
 allowed-tools: Read, Grep, Glob, Write, Edit, Bash
 ---
 
