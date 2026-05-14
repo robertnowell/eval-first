@@ -1,6 +1,6 @@
 ---
 name: eval-first
-description: "Bakes evaluation thinking into work involving prompts, agents, skills, judges, rubrics, or any LLM call site. Every plan names what success looks like, where things can go wrong, and proposes simple checks validating the key assumptions. Runs the checks as part of doing the work; shows verdict first, evidence second. Never asks the user to label cases. Never refuses work. Use when fixing, improving, tuning, shipping, or debugging anything that produces model output. Skip for mechanical changes like typos, formatting, or renames with no semantic shift."
+description: "Bakes evaluation thinking into model output work. Every plan names what success looks like, where things can go wrong, and proposes simple checks validating key assumptions."
 allowed-tools: Read, Grep, Glob, Write, Edit, Bash
 ---
 
