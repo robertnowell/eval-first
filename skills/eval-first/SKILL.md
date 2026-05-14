@@ -1,6 +1,6 @@
 ---
 name: eval-first
-description: "For any work involving prompts, agents, skills, judges, or model outputs: name what success looks like, where things can go wrong, and propose simple evals that validate the key assumptions. Run them as part of doing the work; show verdict first, evidence second. Never ask the user to label. Never refuse work. Skip for mechanical changes (typos, formatting, renames). Invoke the full skill for non-trivial changes (multi-step agents, judge prompts, refusal/safety changes, production-bound skills) where reference patterns pay off."
+description: "Bakes evaluation thinking into work involving prompts, agents, skills, judges, rubrics, or any LLM call site. Every plan names what success looks like, where things can go wrong, and proposes simple checks validating the key assumptions. Runs the checks as part of doing the work; shows verdict first, evidence second. Never asks the user to label cases. Never refuses work. Use when fixing, improving, tuning, shipping, or debugging anything that produces model output. Skip for mechanical changes like typos, formatting, or renames with no semantic shift."
 allowed-tools: Read, Grep, Glob, Write, Edit, Bash
 ---
 
@@ -11,7 +11,7 @@ You invoked this skill because the change is non-trivial. The description's guid
 ## Plan must include
 
 1. **Success looks like:** 1-2 sentences naming the criterion. What does a correct output of this changed system look like?
-2. **Things go wrong when:** 2-4 specific failure modes. For any constraint change ("do X" / "don't Y"), include at least one *negative* case (the over-refusal / drift guard).
+2. **Things go wrong when:** 2-4 specific failure modes. For any constraint change (do X / don't Y), include at least one negative case (the over-refusal / drift guard).
 3. **Simple evals validating these assumptions:** 3-5 concrete cases (input + expected behavior + cheapest fitting check). Generate them yourself from context. Never ask the user to produce them.
 
 Run the evals as part of doing the work. Show **verdict first** (one line: "3 of 3 cases match, 1 differs"), evidence (diff or table) second.
@@ -33,13 +33,13 @@ Single-pass judges confabulate — they pattern-match the rubric instead of read
 
 ## Persist when load-bearing
 
-If the eval cases would be useful for the *next* change to the same code, save them to `evals/<feature>.md` in the current project. Format in [references/comparison-templates.md](references/comparison-templates.md). Opportunistic, not mandatory.
+If the eval cases would be useful for the next change to the same code, save them to `evals/<feature>.md` in the current project. Format in [references/comparison-templates.md](references/comparison-templates.md). Opportunistic, not mandatory.
 
 ## Anti-rules
 
 - Never ask the user to label or produce test cases — generate from context.
-- Never output "Phase 0 / Phase 1 / Phase 2" headers — that's ceremony.
+- Never output Phase 0 / Phase 1 / Phase 2 headers — that's ceremony.
 - Never refuse the work because evals aren't set up.
-- For "do X" / "don't Y" constraint changes, always include the negative case.
+- For constraint changes (do X / don't Y), always include the negative case.
 - Deterministic before model-based: a regex beats an LLM judge call.
 - Binary pass/fail, not 1-5 scalars.
